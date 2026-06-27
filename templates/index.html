@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMediaHub.SA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>XMediaHub.SA</h1>
+
+    <p>Download images and videos from public X posts.</p>
+
+    <form action="/download" method="POST">
+
+    <input
+        type="text"
+        name="url"
+        placeholder="Paste X/Twitter URL"
+        required>
+
+    <button type="submit">
+        Download
+    </button>
+
+</form>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
