@@ -1,29 +1,77 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XMediaHub.SA</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
 <div class="container">
 
-    <h1>XMediaHub.SA</h1>
+    <h1>🌐 XMediaHub.SA</h1>
 
-    <p>Download images and videos from public X posts.</p>
+    <p>Download videos from X, YouTube and more.</p>
 
     <form action="/download" method="POST">
 
         <input
             type="text"
+            id="url"
             name="url"
-            placeholder="Paste X/Twitter URL"
+            placeholder="Paste X / YouTube URL"
             required>
 
+        <br><br>
+
+        <!-- Fetch Info Button -->
+        <button type="button" id="fetchBtn">
+            Fetch Video Info
+        </button>
+
+        <br><br>
+
+        <!-- Video Preview -->
+        <div id="videoInfo">
+
+            <img
+                id="thumb"
+                src=""
+                style="display:none;max-width:100%;border-radius:10px;">
+
+            <h3 id="title"></h3>
+
+            <p id="uploader"></p>
+
+            <p id="duration"></p>
+
+            <p id="views"></p>
+
+        </div>
+
+        <br>
+
+        <select name="quality">
+
+            <option value="best">Best Quality</option>
+
+            <option value="1080">1080p</option>
+
+            <option value="720">720p</option>
+
+            <option value="480">480p</option>
+
+            <option value="audio">MP3 Audio</option>
+
+        </select>
+
+        <br><br>
+
         <button type="submit">
-            Fetch Video
+            Download
         </button>
 
     </form>
@@ -34,3 +82,4 @@
 
 </body>
 </html>
+```
